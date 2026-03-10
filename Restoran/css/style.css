@@ -1,6 +1,6 @@
-/********** Template CSS **********/
+/********** CSS **********/
 :root {
-    --primary: #FEA116;
+    --primary: #a02f77;
     --light: #F1F8FF;
     --dark: #0F172B;
 }
@@ -155,7 +155,7 @@
 
 /*** Hero Header ***/
 .hero-header {
-    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../img/bg-hero.jpg);
+    background: linear-gradient(#1a2b54e6, rgba(15, 23, 43, .9)), url(../img/bg-hero.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -421,4 +421,45 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+/* MODIFICACIONES */
+
+.menu-img{
+    transition: 0.3s;
+}
+
+.menu-img:hover{
+    transform: scale(1.1);
+}
+
+.menu-card{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.menu-card:hover{
+    box-shadow:0px 8px 20px rgba(0,0,0,0.15);
+}
+
+.icon-breakfast{
+    color:#f39c12;
+}
+
+.icon-lunch{
+    color:#27ae60;
+}
+
+.icon-dinner{
+    color:#8e44ad;
+}
+
+.nav-item i{
+    transition:0.3s;
+}
+
+.nav-item:hover i{
+    transform:scale(1.2);
 }
