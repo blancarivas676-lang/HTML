@@ -1,6 +1,6 @@
 /********** CSS **********/
 :root {
-    --primary: #ff4b5c;
+    --primary: #c0392b;
     --light: #F1F8FF;
     --dark: #0F172B;
 }
@@ -517,4 +517,15 @@
 
 .menu-img:hover{
     transform: scale(1.08);
+}
+
+
+.menu-img{
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+transition:transform .3s;
+}
+
+.menu-img:hover{
+transform:scale(1.05);
 }
