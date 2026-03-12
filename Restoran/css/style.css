@@ -1,4 +1,6 @@
-/********** CSS **********/
+/* ========================= */
+/*  ESTILOS RESTAURANTE EL FOGÓN */
+/* ========================= */
 :root {
     --primary: #c0392b;
     --light: #F1F8FF;
@@ -312,14 +314,6 @@
 }
 
 /* MODIFICACIONES */
-
-.menu-img{
-    transition: 0.3s;
-}
-
-.menu-img:hover{
-    transform: scale(1.1);
-}
 
 .icon-breakfast{
     color:#f39c12;
