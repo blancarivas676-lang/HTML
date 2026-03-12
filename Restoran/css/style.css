@@ -284,6 +284,13 @@
     animation: fadeInDown 1s ease;
 }
 
+
+@keyframes imgRotate { 
+    100% { 
+        transform: rotate(360deg); 
+    } 
+}
+
 @keyframes fadeInDown{
     from{
         opacity:0;
@@ -293,6 +300,10 @@
         opacity:1;
         transform:translateY(0);
     }
+}
+
+.hero-header img {
+    animation: imgRotate 50s linear infinite;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
