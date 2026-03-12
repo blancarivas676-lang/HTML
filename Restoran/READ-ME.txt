@@ -1,9 +1,15 @@
-  =>  Template Name    : Restoran - Bootstrap Restaurant Template
+Proyecto: Sitio Web de Restaurante
+Materia: Lenguajes de Marcado y Estilo Web y Gestores de Contenido
 
-  =>  Template Link    : https://htmlcodex.com/bootstrap-restaurant-template
+Descripción:
+Este proyecto consiste en el desarrollo de un sitio web para un restaurante utilizando HTML, CSS, Bootstrap y JavaScript.
 
-  =>  Template License : https://htmlcodex.com/license (or read the LICENSE.txt file)
+El sitio incluye las siguientes secciones:
 
-  =>  Template Author  : HTML Codex
+* Inicio
+* Sobre nosotros
+* Menú
+* Equipo
+* Contacto
 
-  =>  Author Website   : https://htmlcodex.com
+Este proyecto fue desarrollado con fines académicos como parte de una tarea universitaria.
