@@ -12,11 +12,11 @@
     spinner();
     
     
-    // Initiate the wowjs
+    // Iniciar WOW.js
     new WOW().init();
 
 
-    // Sticky Navbar
+    // Barra de navegación fija
     $(window).scroll(function () {
         if ($(this).scrollTop() > 45) {
             $('.navbar').addClass('sticky-top shadow-sm');
@@ -26,7 +26,7 @@
     });
     
     
-    // Dropdown on mouse hover
+    // Menú desplegable al pasar el mouse
     const $dropdown = $(".dropdown");
     const $dropdownToggle = $(".dropdown-toggle");
     const $dropdownMenu = $(".dropdown-menu");
@@ -54,7 +54,7 @@
     });
     
     
-    // Back to top button
+    // Botón volver arriba
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
             $('.back-to-top').fadeIn('slow');
@@ -68,14 +68,14 @@
     });
 
 
-    // Facts counter
+    // Contador de estadísticas
     $('[data-toggle="counter-up"]').counterUp({
         delay: 10,
         time: 2000
     });
 
 
-    // Modal Video
+    // Video moda
     $(document).ready(function () {
         var $videoSrc;
         $('.btn-play').click(function () {

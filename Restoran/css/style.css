@@ -43,7 +43,7 @@
 }
 
 
-/*** Button ***/
+/*** boton ***/
 .btn {
     font-family: 'Nunito', sans-serif;
     font-weight: 500;
@@ -83,7 +83,7 @@
 }
 
 
-/*** Navbar ***/
+/*** barra de navegacio ***/
 .navbar-dark .navbar-nav .nav-link {
     position: relative;
     margin-left: 25px;
@@ -155,7 +155,7 @@
     }
 }
 
-/*** Youtube Video ***/
+/*** Youtube ***/
 .video {
     position: relative;
     height: 100%;
@@ -272,7 +272,7 @@
     opacity: 1;
 }
 
-/*** Hero Header ***/
+/*** Hero header ***/
 .hero-header {
     background: linear-gradient(#1a2b54e6, rgba(15, 23, 43, .9)), url(../img/bg-hero.jpg);
     background-position: center center;
@@ -311,7 +311,7 @@
 }
 
 
-/*** Section Title ***/
+/***  Titulo ***/
 .section-title {
     position: relative;
     display: inline-block;
@@ -345,13 +345,13 @@
 }
 
 
-/*** Food Menu ***/
+/*** Menu ***/
 .nav-pills .nav-item .active {
     border-bottom: 2px solid var(--primary);
 }
 
 
-/*** Team ***/
+/*** equipo ***/
 .team-item {
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
     height: calc(100% - 38px);
