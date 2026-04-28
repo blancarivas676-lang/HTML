@@ -43,7 +43,7 @@
 }
 
 
-/*** boton ***/
+/*** Botones ***/
 .btn {
     font-family: 'Nunito', sans-serif;
     font-weight: 500;
@@ -82,8 +82,21 @@
     border-radius: 2px;
 }
 
+.btn-primary {
+    background: var(--primary);
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+}
 
-/*** barra de navegacio ***/
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    background: #a93226;
+}
+
+
+/*** Barra de navegación ***/
 .navbar-dark .navbar-nav .nav-link {
     position: relative;
     margin-left: 25px;
@@ -122,7 +135,7 @@
 
     .navbar-dark .navbar-collapse {
         margin-top: 15px;
-        border-top: 1px solid rgba(255, 255, 255, .1)
+        border-top: 1px solid rgba(255, 255, 255, .1);
     }
 
     .navbar-dark .navbar-nav .nav-link,
@@ -146,7 +159,7 @@
         background: transparent !important;
         transition: .5s;
     }
-    
+
     .sticky-top.navbar-dark {
         position: fixed;
         padding-left: 45px;
@@ -155,7 +168,8 @@
     }
 }
 
-/*** Youtube ***/
+
+/*** Video / YouTube ***/
 .video {
     position: relative;
     height: 100%;
@@ -236,7 +250,6 @@
         transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
         opacity: 1;
     }
-
     100% {
         transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
         opacity: 0;
@@ -272,6 +285,7 @@
     opacity: 1;
 }
 
+
 /*** Hero header ***/
 .hero-header {
     background: linear-gradient(#1a2b54e6, rgba(15, 23, 43, .9)), url(../img/bg-hero.jpg);
@@ -280,25 +294,24 @@
     background-size: cover;
 }
 
-.hero-header h1{
+.hero-header h1 {
     animation: fadeInDown 1s ease;
 }
 
-
-@keyframes imgRotate { 
-    100% { 
-        transform: rotate(360deg); 
-    } 
+@keyframes imgRotate {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-@keyframes fadeInDown{
-    from{
-        opacity:0;
-        transform:translateY(-20px);
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
-    to{
-        opacity:1;
-        transform:translateY(0);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -311,7 +324,7 @@
 }
 
 
-/***  Titulo ***/
+/*** Títulos de sección ***/
 .section-title {
     position: relative;
     display: inline-block;
@@ -345,13 +358,77 @@
 }
 
 
-/*** Menu ***/
+/*** Tabs del Menú ***/
 .nav-pills .nav-item .active {
     border-bottom: 2px solid var(--primary);
 }
 
+.nav-item i {
+    transition: 0.3s;
+}
 
-/*** equipo ***/
+.nav-item:hover i {
+    transform: scale(1.2);
+}
+
+
+/*** Imágenes del menú con zoom ***/
+.menu-img-wrap {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.menu-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.menu-img-wrap:hover img {
+    transform: scale(1.25);
+}
+
+.menu-img-wrap:not(:hover) img {
+    transform: scale(1);
+}
+
+/* Clase antigua — se mantiene por compatibilidad */
+.menu-img {
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.menu-img:hover {
+    transform: scale(1.25);
+}
+
+
+/*** Tarjetas del menú ***/
+.menu-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+    border: 1px solid #eee;
+}
+
+.menu-card:hover {
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+}
+
+
+/*** Equipo ***/
 .team-item {
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
     height: calc(100% - 38px);
@@ -372,6 +449,24 @@
 
 .team-item .btn {
     border-radius: 38px 38px 0 0;
+}
+
+
+/*** Imágenes de la sección Acerca de (zoom) ***/
+.about-img-zoom {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.about-img-zoom img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.about-img-zoom:hover img {
+    transform: scale(1.08);
 }
 
 
@@ -440,64 +535,16 @@
     border-right: none;
 }
 
-/* MODIFICACIONES */
 
-.icon-breakfast{
-    color:#f39c12;
+/*** Íconos de categoría ***/
+.icon-breakfast {
+    color: #f39c12;
 }
 
-.icon-lunch{
-    color:#27ae60;
+.icon-lunch {
+    color: #27ae60;
 }
 
-.icon-dinner{
-    color:#8e44ad;
-}
-
-.nav-item i{
-    transition:0.3s;
-}
-
-.nav-item:hover i{
-    transform:scale(1.2);
-}
-
-
-.btn-primary{
-    background: var(--primary);
-    border: none;
-    border-radius: 30px;
-    padding: 10px 25px;
-}
-
-.btn-primary:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-
-.menu-card{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    transition:0.3s;
-    border:1px solid #eee;
-}
-
-.menu-card:hover{
-    box-shadow:0px 10px 25px rgba(0,0,0,0.15);
-    transform: translateY(-5px);
-}
-
-
-.menu-img {
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    transition: transform 0.5s ease;
-    width: 130px;
-    height: 130px;
-    object-fit: cover;
-}
-
-.menu-img:hover {
-    transform: scale(1.2);
+.icon-dinner {
+    color: #8e44ad;
 }
