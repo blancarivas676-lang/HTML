@@ -28,27 +28,253 @@
 
     <!-- estilos -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* ===================================
+           IMÁGENES DEL MENÚ - ZOOM IN/OUT
+        ==================================== */
+        .menu-img-wrap {
+            width: 150px;
+            height: 150px;
+            flex-shrink: 0;
+            overflow: hidden;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+
+        .menu-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .menu-img-wrap:hover img {
+            transform: scale(1.25);
+        }
+
+        .menu-img-wrap:not(:hover) img {
+            transform: scale(1);
+        }
+
+        /* ===================================
+           PROMOCIONES
+        ==================================== */
+        .promociones-section {
+            padding: 70px 0;
+            background: #f8f4f0;
+        }
+
+        .promo-card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            background: white;
+        }
+
+        .promo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .promo-card-img-wrap {
+            overflow: hidden;
+            height: 220px;
+        }
+
+        .promo-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .promo-card:hover .promo-card-img {
+            transform: scale(1.08);
+        }
+
+        .promo-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 2;
+            background: #e74c3c;
+            color: white;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 5px 14px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .promo-tag.gold {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+        }
+
+        .promo-tag.green {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+        }
+
+        .promo-body {
+            padding: 20px;
+        }
+
+        .promo-precio-antes {
+            text-decoration: line-through;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .promo-precio-ahora {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #c0392b;
+        }
+
+        .countdown-wrap {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .countdown-box {
+            background: rgba(192,57,43,0.1);
+            border: 1px solid rgba(192,57,43,0.25);
+            border-radius: 10px;
+            padding: 8px 14px;
+            text-align: center;
+            min-width: 60px;
+        }
+
+        .countdown-box .num {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #c0392b;
+            display: block;
+            line-height: 1;
+        }
+
+        .countdown-box .lbl {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: #666;
+            letter-spacing: 1px;
+        }
+
+        /* ===================================
+           GALERÍA DE PLATILLOS
+        ==================================== */
+        .galeria-comida {
+            padding: 70px 0;
+            background: #fff;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .galeria-item {
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .galeria-item.big {
+            grid-row: span 2;
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+            min-height: 200px;
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.12);
+        }
+
+        .galeria-item .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(192,57,43,0);
+            transition: background 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .galeria-item:hover .overlay {
+            background: rgba(192,57,43,0.35);
+        }
+
+        .galeria-item .overlay i {
+            color: white;
+            font-size: 2rem;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.3s ease;
+        }
+
+        .galeria-item:hover .overlay i {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Modal lightbox */
+        #lightboxModal .modal-content {
+            background: rgba(0,0,0,0.92);
+            border: none;
+            border-radius: 15px;
+        }
+
+        #lightboxModal img {
+            max-height: 80vh;
+            max-width: 100%;
+            border-radius: 10px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .galeria-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .galeria-item.big {
+                grid-row: span 1;
+            }
+            .menu-img-wrap {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div class="container-fluid bg-white p-0">
-        <!-- inicio Spinner -->
+
+        <!-- Spinner -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <!-- fin Spinner -->
 
-
-<!-- Barra de navegación principal -->
+        <!-- Barra de navegación -->
         <div class="container-fluid p-0">
             <div class="container position-relative p-0">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 py-lg-0">
                     <a href="" class="navbar-brand p-0">
                         <h1 class="text-primary m-0"><i class="fa fa-fire me-3"></i>El Fogón</h1>
-                                       <!--  para usar logo en lugar de texto se usa el codigo  -->
-                                             <!-- <img src="img/logo.png" alt="Logo"> -->
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars"></span>
@@ -65,29 +291,128 @@
                 </nav>
             </div>
 
-<div class="container-fluid py-5 bg-dark hero-header mb-5">
-    <div class="container text-center my-5 pt-5 pb-4">
-
-        <div style="color:#f39c12; font-size:14px; margin-bottom:10px;">
-            ★ ★ ★
+            <!-- Hero -->
+            <div class="container-fluid py-5 bg-dark hero-header mb-5">
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <div style="color:#f39c12; font-size:14px; margin-bottom:10px;">★ ★ ★</div>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Sabores de Nuestra Cocina</h1>
+                    <div style="width:70px;height:3px;background:#f39c12;margin:0 auto;"></div>
+                </div>
+            </div>
         </div>
 
-        <h1 class="display-3 text-white mb-3 animated slideInDown">
-            Sabores de Nuestra Cocina
-        </h1>
 
-        <div style="width:70px;height:3px;background:#f39c12;margin:0 auto;"></div>
+        <!-- =============================================
+             PROMOCIONES DEL DÍA / MES
+        ============================================= -->
+        <section class="promociones-section">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="margin-bottom:50px;">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Ofertas</h5>
+                    <h1 style="font-family:'Pacifico',cursive;">Promociones</h1>
+                </div>
 
-        <nav aria-label="breadcrumb">
-        </nav>
+                <div class="row g-4">
+                    <!-- Promo del Día -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="promo-card">
+                            <span class="promo-tag">🔥 Hoy</span>
+                            <div class="promo-card-img-wrap">
+                                <img src="img/almuerzo3.jpg" class="promo-card-img" alt="Tacos de Carnitas">
+                            </div>
+                            <div class="promo-body">
+                                <h5 class="mb-1">Tacos de Carnitas</h5>
+                                <p class="text-muted mb-2" style="font-size:13px;">Válido solo hoy · Lunes a Viernes</p>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <span class="promo-precio-antes">$11.00</span>
+                                        <span class="promo-precio-ahora ms-2">$8.50</span>
+                                    </div>
+                                    <span class="badge bg-danger">-22%</span>
+                                </div>
+                                <div class="countdown-wrap">
+                                    <div class="countdown-box"><span class="num" id="cd-h">00</span><span class="lbl">hrs</span></div>
+                                    <div class="countdown-box"><span class="num" id="cd-m">00</span><span class="lbl">min</span></div>
+                                    <div class="countdown-box"><span class="num" id="cd-s">00</span><span class="lbl">seg</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    </div>
-</div>
-</div>
-<!-- Fin barra de navegación -->
+                    <!-- Promo del Mes -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="promo-card">
+                            <span class="promo-tag gold">⭐ Mes</span>
+                            <div class="promo-card-img-wrap">
+                                <img src="img/cena2.jpg" class="promo-card-img" alt="Salmón">
+                            </div>
+                            <div class="promo-body">
+                                <h5 class="mb-1">Salmón + Postre</h5>
+                                <p class="text-muted mb-2" style="font-size:13px;">Combo especial · Todo mayo</p>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <span class="promo-precio-antes">$22.00</span>
+                                        <span class="promo-precio-ahora ms-2">$16.99</span>
+                                    </div>
+                                    <span class="badge" style="background:#e67e22;">-23%</span>
+                                </div>
+                                <div class="mt-3">
+                                    <small class="text-muted"><i class="fa fa-info-circle me-1"></i> Incluye bebida y postre del día</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Promo 2x1 -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="promo-card">
+                            <span class="promo-tag green">🎉 2×1</span>
+                            <div class="promo-card-img-wrap">
+                                <img src="img/hotcakes.png" class="promo-card-img" alt="Desayunos 2x1">
+                            </div>
+                            <div class="promo-body">
+                                <h5 class="mb-1">Desayunos 2×1</h5>
+                                <p class="text-muted mb-2" style="font-size:13px;">Sábados y Domingos · 8AM - 12PM</p>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <span class="promo-precio-ahora">¡Lleva 2, paga 1!</span>
+                                    </div>
+                                    <span class="badge" style="background:#27ae60;">Fines de semana</span>
+                                </div>
+                                <div class="mt-3">
+                                    <small class="text-muted"><i class="fa fa-users me-1"></i> Válido para grupos de 2 personas</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banner cupón -->
+                <div class="row mt-4">
+                    <div class="col-12 wow fadeInUp" data-wow-delay="0.4s">
+                        <div style="background: linear-gradient(135deg, #c0392b, #922b21); border-radius:20px; padding:35px 40px; position:relative; overflow:hidden;">
+                            <div style="position:absolute; right:-20px; top:-20px; width:200px; height:200px; background:rgba(255,255,255,0.05); border-radius:50%;"></div>
+                            <div class="row align-items-center">
+                                <div class="col-lg-8">
+                                    <h3 class="text-white mb-1" style="font-family:'Pacifico',cursive;">¿Primera visita?</h3>
+                                    <p class="text-white mb-0" style="opacity:0.9;">Obtén <strong>15% de descuento</strong> en tu primer pedido. Usa el código <strong>FOGON15</strong> al reservar.</p>
+                                </div>
+                                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                                    <a href="contact.html" class="btn btn-light" style="border-radius:30px; font-weight:700; padding:12px 30px; color:#c0392b;">
+                                        <i class="fa fa-tag me-2"></i> Usar cupón
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
-        <!-- Inicio de Menu -->
+        <!-- =============================================
+             MENÚ (imágenes grandes con zoom)
+        ============================================= -->
         <div class="container-fluid py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -124,13 +449,17 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- ================= MENU DESAYUNO ================= -->
+
                     <div class="tab-content">
+
+                        <!-- ===== DESAYUNO ===== -->
                         <div id="tab-1" class="tab-pane fade show p-0 active">
                             <div class="row g-4">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/hotcakes.png" alt="Hotcakes con frutas" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/hotcakes.png" alt="Hotcakes con frutas">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Hotcakes <span class="badge bg-danger ms-2">Nuevo</span></span>
@@ -142,7 +471,9 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/Huevos.jpg" alt="Huevos Benedictinos" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/Huevos.jpg" alt="Huevos Benedictinos">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Huevos Benedictinos</span>
@@ -154,10 +485,12 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/Desayuno3.jpg" alt="Pupusas Revueltas con Curtido" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/Desayuno3.jpg" alt="Pupusas Revueltas con Curtido">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Pupusas Revueltas con Curtido</span><span class="badge bg-danger ms-2">Popular</span></span>
+                                                <span>Pupusas Revueltas <span class="badge bg-danger ms-2">Popular</span></span>
                                                 <span class="text-primary">$6.75</span>
                                             </h5>
                                             <small class="fst-italic">Tres pupusas de maíz rellenas de queso, frijoles y chicharrón, acompañadas de curtido y salsa de tomate.</small>
@@ -166,7 +499,9 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/Spinach-and-Feta-Omelette.jpg" alt="Omelette de Espinaca y Queso Feta" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/Spinach-and-Feta-Omelette.jpg" alt="Omelette de Espinaca y Queso Feta">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Omelette de Espinaca y Queso Feta</span>
@@ -178,7 +513,9 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/bowl-acai.jpg" alt="Bowl Acaí con Granola" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/bowl-acai.jpg" alt="Bowl Acaí con Granola">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Bowl Acaí con Granola</span>
@@ -190,7 +527,9 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/Croissant.jpg" alt="Croissant de Jamón y Queso" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/Croissant.jpg" alt="Croissant de Jamón y Queso">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Croissant de Jamón y Queso</span>
@@ -202,12 +541,15 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- ================= MENU ALMUERZO ================= -->
+
+                        <!-- ===== ALMUERZO ===== -->
                         <div id="tab-2" class="tab-pane fade show p-0">
                             <div class="row g-4">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/almuerzo1.jpg" alt="Medallones de Res al Vino Tinto" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/almuerzo1.jpg" alt="Medallones de Res al Vino Tinto">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Medallones de Res al Vino Tinto</span>
@@ -219,7 +561,9 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/almuerzo2.jpg" alt="" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/almuerzo2.jpg" alt="Tagliatelle al Tartufo">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Tagliatelle al Tartufo</span>
@@ -231,10 +575,12 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/almuerzo3.jpg" alt="" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/almuerzo3.jpg" alt="Tacos de Carnitas">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Tacos de Carnitas</span><span class="badge bg-danger ms-2">Popular</span></span>
+                                                <span>Tacos de Carnitas <span class="badge bg-danger ms-2">Popular</span></span>
                                                 <span class="text-primary">$11.00</span>
                                             </h5>
                                             <small class="fst-italic">Tres tacos de tortilla de maíz rellenos de carnitas crujientes, cebolla, cilantro, guacamole y salsa.</small>
@@ -243,10 +589,12 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/almuerzo4.jpg" alt="" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/almuerzo4.jpg" alt="Ensalada César con Camarones">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Ensalada César con Camarones</span></span><span class="badge bg-danger ms-2">Nuevo</span></span>
+                                                <span>Ensalada César con Camarones <span class="badge bg-danger ms-2">Nuevo</span></span>
                                                 <span class="text-primary">$13.00</span>
                                             </h5>
                                             <small class="fst-italic">Lechuga romana, crutones caseros, parmesano laminado, aderezo césar y camarones a la plancha.</small>
@@ -255,7 +603,9 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/almuerzo5.jpg" alt="" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/almuerzo5.jpg" alt="Sopa Crema de Tomate">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Sopa Crema de Tomate</span>
@@ -267,7 +617,9 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/almuerzo6.jpg" alt="" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/almuerzo6.jpg" alt="Club Sandwich">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Club Sandwich</span>
@@ -279,12 +631,15 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- ================= MENU CENA ================= -->
+
+                        <!-- ===== CENA ===== -->
                         <div id="tab-3" class="tab-pane fade p-0">
-                        <div class="row g-4">
+                            <div class="row g-4">
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/cena1.jpg" alt="Filete de Res a la Parrilla" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/cena1.jpg" alt="Filete de Res a la Parrilla">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Filete de Res a la Parrilla</span>
@@ -296,10 +651,12 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/cena2.jpg" alt="Huevos Benedictinos" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/cena2.jpg" alt="Salmón a la Mantequilla de Limón">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Salmón a la Mantequilla de Limón</span><span class="badge bg-danger ms-2">Popular</span></span>
+                                                <span>Salmón a la Mantequilla de Limón <span class="badge bg-danger ms-2">Popular</span></span>
                                                 <span class="text-primary">$17.50</span>
                                             </h5>
                                             <small class="fst-italic">Filete de salmón sellado con mantequilla de limón y hierbas, servido con arroz cremoso y espárragos.</small>
@@ -308,7 +665,9 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/cena5.jpg" alt="Chilaquiles Verdes" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/cena5.jpg" alt="Pasta Alfredo con Pollo">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Pasta Alfredo con Pollo</span>
@@ -320,7 +679,9 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/cena6.jpg" alt="Omelette de Espinaca y Queso Feta" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/cena6.jpg" alt="Pollo a la Parrilla con Vegetales">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Pollo a la Parrilla con Vegetales</span>
@@ -332,7 +693,9 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/cena3.jpg" alt="Bowl Acaí con Granola" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/cena3.jpg" alt="Costillas BBQ">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>Costillas BBQ</span>
@@ -344,10 +707,12 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded menu-img" src="img/cena4.jpg" alt="Croissant de Jamón y Queso" style="width: 80px;">
+                                        <div class="menu-img-wrap">
+                                            <img src="img/cena4.jpg" alt="Camarones al Ajillo">
+                                        </div>
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Camarones al Ajillo</span><span class="badge bg-danger ms-2">Nuevo</span></span>
+                                                <span>Camarones al Ajillo <span class="badge bg-danger ms-2">Nuevo</span></span>
                                                 <span class="text-primary">$15.50</span>
                                             </h5>
                                             <small class="fst-italic">Camarones salteados en mantequilla, ajo y vino blanco, acompañados de arroz y ensalada fresca.</small>
@@ -356,14 +721,80 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Fin de Menu -->
-        
 
-        <!-- Inicio de Footer -->
+
+        <!-- =============================================
+             GALERÍA DE PLATILLOS (con lightbox)
+        ============================================= -->
+        <section class="galeria-comida">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="margin-bottom:50px;">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Fotos</h5>
+                    <h1 style="font-family:'Pacifico',cursive;">Galería de Platillos</h1>
+                    <p class="text-muted">Haz clic en cualquier imagen para verla en detalle</p>
+                </div>
+
+                <div class="galeria-grid wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="galeria-item big" onclick="abrirLightbox('img/almuerzo1.jpg', 'Medallones de Res al Vino Tinto')">
+                        <img src="img/almuerzo1.jpg" alt="Medallones de Res">
+                        <div class="overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                    <div class="galeria-item" onclick="abrirLightbox('img/cena2.jpg', 'Salmón a la Mantequilla de Limón')">
+                        <img src="img/cena2.jpg" alt="Salmón">
+                        <div class="overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                    <div class="galeria-item" onclick="abrirLightbox('img/hotcakes.png', 'Hotcakes con Frutas')">
+                        <img src="img/hotcakes.png" alt="Hotcakes">
+                        <div class="overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                    <div class="galeria-item" onclick="abrirLightbox('img/almuerzo3.jpg', 'Tacos de Carnitas')">
+                        <img src="img/almuerzo3.jpg" alt="Tacos de Carnitas">
+                        <div class="overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                    <div class="galeria-item" onclick="abrirLightbox('img/cena3.jpg', 'Costillas BBQ')">
+                        <img src="img/cena3.jpg" alt="Costillas BBQ">
+                        <div class="overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                    <div class="galeria-item big" onclick="abrirLightbox('img/cena1.jpg', 'Filete de Res a la Parrilla')">
+                        <img src="img/cena1.jpg" alt="Filete de Res">
+                        <div class="overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                    <div class="galeria-item" onclick="abrirLightbox('img/bowl-acai.jpg', 'Bowl Acaí con Granola')">
+                        <img src="img/bowl-acai.jpg" alt="Bowl Acaí">
+                        <div class="overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                    <div class="galeria-item" onclick="abrirLightbox('img/Huevos.jpg', 'Huevos Benedictinos')">
+                        <img src="img/Huevos.jpg" alt="Huevos Benedictinos">
+                        <div class="overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                    <div class="galeria-item" onclick="abrirLightbox('img/cena4.jpg', 'Camarones al Ajillo')">
+                        <img src="img/cena4.jpg" alt="Camarones al Ajillo">
+                        <div class="overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal Lightbox -->
+        <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content" style="background:rgba(0,0,0,0.92); border:none; border-radius:15px; position:relative;">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" style="position:absolute; top:10px; right:10px; z-index:10;"></button>
+                    <div class="modal-body p-3 text-center">
+                        <img id="lightboxImg" src="" alt="" style="max-height:80vh; max-width:100%; border-radius:10px; object-fit:contain;">
+                        <p id="lightboxCaption" class="text-white mt-3 mb-0" style="font-size:1.1rem;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
         <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
                 <div class="row g-5">
@@ -371,13 +802,13 @@
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Compañia</h4>
                         <a class="btn btn-link" href="">Contáctanos</a>
                         <a class="btn btn-link" href="">Reserva con nosotros</a>
-                        <a class="btn btn-link" href=""> Políticas de privacidad</a>
+                        <a class="btn btn-link" href="">Políticas de privacidad</a>
                         <a class="btn btn-link" href="">Términos y condiciones</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Dirección</h4>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i> Calle a Plan del Pino, Km. 1 ½, Ciudadela Don Bosco, Soyapango, San Salvador</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+ 503 2251 8241 </p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+ 503 2251 8241</p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>grupo_HTLM_LME2026@alumno.edu.sv</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
@@ -395,7 +826,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Boletín informativo</h4>
-                        <p> Disfruta de una experiencia gastronómica única donde combinamos ingredientes frescos, recetas tradicionales y un ambiente acogedor. Nuestro menú está diseñado para ofrecer platos deliciosos preparados con dedicación, ideales para compartir con familia y amigos.   </p>
+                        <p>Disfruta de una experiencia gastronómica única donde combinamos ingredientes frescos, recetas tradicionales y un ambiente acogedor.</p>
                     </div>
                 </div>
             </div>
@@ -403,8 +834,7 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">El Fogón</a>, Todos los derechos reservados. 
-							
+                            &copy; <a class="border-bottom" href="#">El Fogón</a>, Todos los derechos reservados.
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
@@ -418,21 +848,43 @@
                 </div>
             </div>
         </div>
-        <!-- Fin de Footer -->
 
-
-        <!-- de regreso al inicio -->
+        <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
-    <!-- librerias JavaScript  -->
+    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
-
-    <!-- Javascript -->
     <script src="js/main.js"></script>
-</body>
 
+    <script>
+        // Lightbox
+        function abrirLightbox(src, caption) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightboxCaption').textContent = caption;
+            var modal = new bootstrap.Modal(document.getElementById('lightboxModal'));
+            modal.show();
+        }
+
+        // Cuenta regresiva promo del día
+        function updateCountdown() {
+            var now = new Date();
+            var end = new Date();
+            end.setHours(21, 0, 0, 0);
+            if (now > end) end.setDate(end.getDate() + 1);
+            var diff = end - now;
+            var h = Math.floor(diff / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+            document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+            document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
 </html>
