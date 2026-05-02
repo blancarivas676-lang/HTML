@@ -114,10 +114,12 @@
 <!-- Fin barra de navegación -->
 
 
-    <!-- Acerca de nosotros Start -->
+   <!-- Acerca de nosotros Start -->
 <div class="container-fluid py-5">
     <div class="container">
-        class="row g-5 align-items-start"
+
+        <!-- ✅ AQUÍ ESTABA EL ERROR -->
+        <div class="row g-5 align-items-start">
 
             <!-- IMÁGENES -->
             <div class="col-lg-6">
@@ -131,23 +133,22 @@
                              alt="Fachada del restaurante El Fogón">
                     </div>
 
-                   <!-- Chef cocinando -->
-<div class="col-6">
-    <img class="img-fluid rounded w-100 wow zoomIn"
-         data-wow-delay="0.3s"
-         src="img/chef-cocinando.jpg"
-         alt="Chef preparando platillos en El Fogón"
-         style="height: 220px; object-fit: cover;">
-</div>
+                    <!-- Chef cocinando -->
+                    <div class="col-6">
+                        <img class="img-fluid rounded w-100 wow zoomIn"
+                             data-wow-delay="0.3s"
+                             src="img/chef-cocinando.jpg"
+                             alt="Chef preparando platillos"
+                             style="height: 220px; object-fit: cover;">
+                    </div>
 
-<!-- Clientes comiendo -->
-<div class="col-6">
-    <img class="img-fluid rounded w-100 wow zoomIn"
-         data-wow-delay="0.5s"
-         src="img/clientes-comiendo.jpg"
-         alt="Clientes disfrutando la comida en El Fogón"
-         style="height: 220px; object-fit: cover;">
-</div>
+                    <!-- Clientes comiendo -->
+                    <div class="col-6">
+                        <img class="img-fluid rounded w-100 wow zoomIn"
+                             data-wow-delay="0.5s"
+                             src="img/clientes-comiendo.jpg"
+                             alt="Clientes en el restaurante"
+                             style="height: 220px; object-fit: cover;">
                     </div>
 
                 </div>
@@ -163,43 +164,16 @@
                 <h1 class="mb-4">Una década de tradición y sabor en Soyapango</h1>
 
                 <p class="mb-4">
-                    Hace diez años, en Soyapango, nació El Fogón como un proyecto local con el objetivo de ofrecer comida de calidad en un ambiente cercano y acogedor. Con el paso del tiempo, se ha convertido en un referente gastronómico, donde la calidez del servicio se combina con una cocina bien elaborada.
+                    Hace diez años, en Soyapango, nació El Fogón como un proyecto local con el objetivo de ofrecer comida de calidad en un ambiente cercano y acogedor.
                 </p>
 
                 <p class="mb-4">
-                    Nuestro crecimiento ha sido posible gracias a un equipo de chefs comprometidos, que combinan técnicas modernas con recetas tradicionales para crear experiencias únicas. Cada plato refleja nuestra dedicación, utilizando ingredientes frescos y manteniendo el equilibrio entre innovación y tradición.
+                    Nuestro crecimiento ha sido posible gracias a un equipo de chefs comprometidos que combinan técnicas modernas con recetas tradicionales.
                 </p>
 
                 <p class="mb-4">
-                    Hoy, seguimos trabajando con la misma pasión del primer día, ofreciendo a nuestros clientes un espacio donde pueden disfrutar buena comida, un excelente servicio y un ambiente agradable en el corazón de Soyapango.
+                    Hoy seguimos trabajando con la misma pasión del primer día, brindando una experiencia gastronómica única.
                 </p>
-
-                <!-- DATOS -->
-                <div class="row g-4 mb-4">
-
-                    <div class="col-sm-6">
-                        <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                            <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">10</h1>
-                            <div class="ps-4">
-                                <p class="mb-0">Años de</p>
-                                <h6 class="text-uppercase mb-0">Experiencia</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                            <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">25</h1>
-                            <div class="ps-4">
-                                <p class="mb-0">Chefs</p>
-                                <h6 class="text-uppercase mb-0">Profesionales</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <a class="btn btn-primary py-3 px-5 mt-2" href="">Conocer más</a>
 
             </div>
 
