@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Restaurante - El Fogón</title>
+    <title>El Fogón - Acerca de Nosotros</title>
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -14,17 +15,24 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap"
+          rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+          rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+          rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
-    <!-- Customized Bootstrap Stylesheet -->
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+          rel="stylesheet" />
+
+    <!-- Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
@@ -32,351 +40,386 @@
 </head>
 
 <body>
+
     <div class="container-fluid bg-white p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+
+        <!-- Spinner -->
+        <div id="spinner"
+             class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+
+            <div class="spinner-border text-primary"
+                 style="width: 3rem; height: 3rem;"
+                 role="status">
+
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <!-- Spinner End -->
 
+        <!-- Navbar -->
+        <div class="container-fluid p-0">
 
-<!-- Barra de navegación principal -->
-<div class="container-fluid p-0">
-    <div class="container position-relative p-0">
+            <div class="container position-relative p-0">
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow p-3 py-lg-0">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
 
-            <a href="index.html" class="navbar-brand p-0">
-                <h1 class="text-primary m-0">
-                    <i class="fa fa-fire me-3"></i>El Fogón
-                </h1>
-                <!--  para usar logo en lugar de texto se usa el codigo  -->
-                <!-- <img src="img/logo.png" alt="Logo"> -->
-            </a>
+                    <a href="index.html" class="navbar-brand p-0">
 
-            <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
+                        <h1 class="text-primary m-0">
+                            <i class="fa fa-fire me-3"></i>
+                            El Fogón
+                        </h1>
 
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-
-                <div class="navbar-nav ms-auto py-0 pe-4">
-
-                    <a href="index.html" class="nav-item nav-link">
-                        Inicio
                     </a>
 
-                    <a href="about.html" class="nav-item nav-link active">
-                        Acerca de Nosotros
-                    </a>
+                    <button class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarCollapse">
 
-                    <a href="menu.html" class="nav-item nav-link">
-                        Menú
-                    </a>
+                        <span class="fa fa-bars"></span>
 
-                    <a href="team.html" class="nav-item nav-link">
-                        Nuestro equipo
-                    </a>
+                    </button>
 
-                    <a href="contact.html" class="nav-item nav-link">
-                        Contáctanos
-                    </a>
+                    <div class="collapse navbar-collapse"
+                         id="navbarCollapse">
 
-                </div>
+                        <div class="navbar-nav ms-auto py-0 pe-4">
 
-            </div>
+                            <a href="index.html"
+                               class="nav-item nav-link">
+                               Inicio
+                            </a>
 
-        </nav>
+                            <a href="about.html"
+                               class="nav-item nav-link active">
+                               Acerca de Nosotros
+                            </a>
 
-    </div>
+                            <a href="menu.html"
+                               class="nav-item nav-link">
+                               Menú
+                            </a>
 
-    <!-- Encabezado de la página -->
-    <div class="container-fluid py-5 bg-dark hero-header mb-5">
+                            <a href="team.html"
+                               class="nav-item nav-link">
+                               Nuestro Equipo
+                            </a>
 
-        <div class="container text-center my-5 pt-5 pb-4">
-
-            <h1 class="display-3 text-white mb-3 animated slideInDown">
-                Conócenos
-            </h1>
-
-            <nav aria-label="breadcrumb">
-            </nav>
-
-        </div>
-
-    </div>
-
-</div>
-<!-- Fin barra de navegación -->
-
-<!-- Acerca de nosotros Start -->
-<div class="container-fluid py-5">
-    <div class="container">
-
-        <div class="row align-items-start">
-
-            <!-- IMÁGENES -->
-            <div class="col-lg-6">
-
-                <!-- Imagen grande -->
-                <div class="mb-1">
-                    <img class="img-fluid rounded w-100 wow zoomIn"
-                        data-wow-delay="0.1s"
-                        src="img/fachada.jpg"
-                        alt="Fachada del restaurante El Fogón"
-                        style="height: 500px; object-fit: cover; display:block;">
-                </div>
-
-                <!-- Imágenes pequeñas -->
-                <div class="d-flex gap-1">
-
-                    <!-- Clientes -->
-                    <div style="width:50%;">
-                        <img class="img-fluid rounded w-100 wow zoomIn"
-                            data-wow-delay="0.3s"
-                            src="img/clientes-comiendo.jpg"
-                            alt="Clientes disfrutando la comida"
-                            style="height: 240px; object-fit: cover; display:block;">
-                    </div>
-
-                    <!-- Chef -->
-                    <div style="width:50%;">
-                        <img class="img-fluid rounded w-100 wow zoomIn"
-                            data-wow-delay="0.5s"
-                            src="img/chef-cocinando.jpg"
-                            alt="Chef preparando comida"
-                            style="height: 240px; object-fit: cover; display:block;">
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- TEXTO -->
-            <div class="col-lg-6">
-
-                <h5 class="section-title ff-secondary text-start text-primary fw-normal">
-                    <i class="fa fa-fire me-3"></i>El Fogón
-                </h5>
-
-                <h1 class="mb-4">
-                    Una década de tradición y sabor en Soyapango
-                </h1>
-
-                <p class="mb-4">
-                    Hace diez años, en Soyapango, nació El Fogón como un proyecto local con el objetivo de ofrecer comida de calidad en un ambiente cercano y acogedor. Con el paso del tiempo, se ha convertido en un referente gastronómico, donde la calidez del servicio se combina con una cocina bien elaborada.
-                </p>
-
-                <p class="mb-4">
-                    Nuestro crecimiento ha sido posible gracias a un equipo de chefs comprometidos, que combinan técnicas modernas con recetas tradicionales para crear experiencias únicas. Cada plato refleja nuestra dedicación, utilizando ingredientes frescos y manteniendo el equilibrio entre innovación y tradición.
-                </p>
-
-                <p class="mb-4">
-                    Hoy seguimos trabajando con la misma pasión del primer día, brindando a nuestros clientes una experiencia gastronómica única en el corazón de Soyapango.
-                </p>
-
-                <!-- DATOS -->
-                <div class="row g-4 mb-4">
-
-                    <!-- 10 años -->
-                    <div class="col-sm-6">
-                        <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-
-                            <h1 class="flex-shrink-0 display-5 text-primary mb-0"
-                                data-toggle="counter-up">
-                                10
-                            </h1>
-
-                            <div class="ps-4">
-                                <p class="mb-0">Años de</p>
-                                <h6 class="text-uppercase mb-0">
-                                    Experiencia
-                                </h6>
-                            </div>
+                            <a href="contact.html"
+                               class="nav-item nav-link">
+                               Contáctanos
+                            </a>
 
                         </div>
+
                     </div>
 
-                    <!-- 25 chefs -->
-                    <div class="col-sm-6">
-                        <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-
-                            <h1 class="flex-shrink-0 display-5 text-primary mb-0"
-                                data-toggle="counter-up">
-                                25
-                            </h1>
-
-                            <div class="ps-4">
-                                <p class="mb-0">Chefs</p>
-                                <h6 class="text-uppercase mb-0">
-                                    Profesionales
-                                </h6>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-                
-                <a class="btn btn-primary py-3 px-5 mt-2" href="">
-                    Conocer más
-                </a>
+                </nav>
 
             </div>
 
         </div>
 
-    </div>
-</div>
-<!-- Acerca de nosotros End -->
-        <!-- Team Start -->
-        <div class="container-fluid pt-5 pb-3">
+        <!-- Hero -->
+        <div class="container-fluid py-5 bg-dark hero-header mb-5">
+
+            <div class="container text-center my-5 pt-5 pb-4">
+
+                <h1 class="display-3 text-white mb-3 animated slideInDown">
+                    Acerca de Nosotros
+                </h1>
+
+            </div>
+
+        </div>
+
+        <!-- Acerca de nosotros -->
+        <div class="container-fluid py-5">
+
             <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Nuestro Equipo</h5>
-                    <h1 class="mb-5"> Chefs</h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-1.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Arturo Garcia</h5>
-                            <small>Maestro Chef</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-2.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Elena Vides</h5>
-                            <small>Chef Junior</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-3.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Isabel Sosa</h5>
-                            <small>Jefa de Cocina</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-4.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Daniel Rosales</h5>
-                            <small>Maestro Pastelero</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Team End -->
-        
 
-        <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+                <div class="row align-items-start">
+
+                    <!-- IMÁGENES -->
+                    <div class="col-lg-6">
+
+                        <!-- Imagen principal -->
+                        <div class="mb-2">
+
+                            <img class="img-fluid rounded w-100 wow zoomIn"
+                                 data-wow-delay="0.1s"
+                                 src="img/fachada.jpg"
+                                 alt="Fachada del restaurante El Fogón"
+                                 style="height: 500px; object-fit: cover;">
+
+                        </div>
+
+                        <!-- Imágenes inferiores -->
+                        <div class="d-flex gap-0">
+
+                            <!-- Clientes -->
+                            <div style="width:50%;">
+
+                                <img class="img-fluid rounded-start wow zoomIn"
+                                     data-wow-delay="0.3s"
+                                     src="img/clientes-comiendo.jpg"
+                                     alt="Clientes disfrutando la comida"
+                                     style="width:100%; height:260px; object-fit:cover; display:block;">
+
+                            </div>
+
+                            <!-- Chef -->
+                            <div style="width:50%;">
+
+                                <img class="img-fluid rounded-end wow zoomIn"
+                                     data-wow-delay="0.5s"
+                                     src="img/chef-cocinando.jpg"
+                                     alt="Chef preparando comida"
+                                     style="width:100%; height:260px; object-fit:cover; display:block;">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- TEXTO -->
+                    <div class="col-lg-6">
+
+                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">
+
+                            <i class="fa fa-fire me-3"></i>
+                            El Fogón
+
+                        </h5>
+
+                        <h1 class="mb-4">
+                            Una década de tradición y sabor en Soyapango
+                        </h1>
+
+                        <p class="mb-4">
+                            Hace diez años, en Soyapango, nació El Fogón como un proyecto local con el objetivo de ofrecer comida de calidad en un ambiente cercano y acogedor.
+                        </p>
+
+                        <p class="mb-4">
+                            Con el paso del tiempo, se ha convertido en un referente gastronómico, donde la calidez del servicio se combina con una cocina bien elaborada.
+                        </p>
+
+                        <p class="mb-4">
+                            Nuestro crecimiento ha sido posible gracias a un equipo de chefs comprometidos, que combinan técnicas modernas con recetas tradicionales para crear experiencias únicas.
+                        </p>
+
+                        <p class="mb-4">
+                            Hoy seguimos trabajando con la misma pasión del primer día, brindando a nuestros clientes una experiencia gastronómica única en el corazón de Soyapango.
+                        </p>
+
+                        <!-- DATOS -->
+                        <div class="row g-4 mb-4">
+
+                            <!-- 10 años -->
+                            <div class="col-sm-6">
+
+                                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+
+                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0"
+                                        data-toggle="counter-up">
+
+                                        10
+
+                                    </h1>
+
+                                    <div class="ps-4">
+
+                                        <p class="mb-0">
+                                            Años de
+                                        </p>
+
+                                        <h6 class="text-uppercase mb-0">
+                                            Experiencia
+                                        </h6>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- 25 chefs -->
+                            <div class="col-sm-6">
+
+                                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+
+                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0"
+                                        data-toggle="counter-up">
+
+                                        25
+
+                                    </h1>
+
+                                    <div class="ps-4">
+
+                                        <p class="mb-0">
+                                            Chefs
+                                        </p>
+
+                                        <h6 class="text-uppercase mb-0">
+                                            Profesionales
+                                        </h6>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Botón -->
+                        <a class="btn btn-primary py-3 px-5 mt-2"
+                           href="">
+
+                            Conocer más
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
+             data-wow-delay="0.1s">
+
             <div class="container py-5">
+
                 <div class="row g-5">
+
+                    <!-- Compañía -->
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Compañia</h4>
-                        <a class="btn btn-link" href="">Contáctanos</a>
-                        <a class="btn btn-link" href="">Reserva con nosotros</a>
-                        <a class="btn btn-link" href="">Políticas de privacidad</a>
-                        <a class="btn btn-link" href="">Términos y condiciones</a>
+
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">
+                            Compañía
+                        </h4>
+
+                        <a class="btn btn-link" href="">
+                            Contáctanos
+                        </a>
+
+                        <a class="btn btn-link" href="">
+                            Reserva con nosotros
+                        </a>
+
+                        <a class="btn btn-link" href="">
+                            Políticas de privacidad
+                        </a>
+
+                        <a class="btn btn-link" href="">
+                            Términos y condiciones
+                        </a>
+
                     </div>
+
+                    <!-- Dirección -->
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Dirección</h4>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Calle a Plan del Pino, Km. 1 ½, Ciudadela Don Bosco, Soyapango, San Salvador</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+ 503 2251 8241 </p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>grupo_HTLM_LME2026@alumno.edu.sv</p>
-                        <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
+
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">
+                            Dirección
+                        </h4>
+
+                        <p class="mb-2">
+                            <i class="fa fa-map-marker-alt me-3"></i>
+                            Calle a Plan del Pino, Km. 1½,
+                            Ciudadela Don Bosco,
+                            Soyapango, San Salvador
+                        </p>
+
+                        <p class="mb-2">
+                            <i class="fa fa-phone-alt me-3"></i>
+                            +503 2251 8241
+                        </p>
+
+                        <p class="mb-2">
+                            <i class="fa fa-envelope me-3"></i>
+                            grupo_HTML_LME2026@alumno.edu.sv
+                        </p>
+
                     </div>
+
+                    <!-- Horarios -->
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Horarios</h4>
-                        <h5 class="text-light fw-normal">Lunes - Sábado</h5>
+
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">
+                            Horarios
+                        </h4>
+
+                        <h5 class="text-light fw-normal">
+                            Lunes - Sábado
+                        </h5>
+
                         <p>09AM - 09PM</p>
-                        <h5 class="text-light fw-normal">Domingo</h5>
+
+                        <h5 class="text-light fw-normal">
+                            Domingo
+                        </h5>
+
                         <p>10AM - 08PM</p>
+
                     </div>
+
+                    <!-- Información -->
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Boletín informativo</h4>
-                        <p> Disfruta de una experiencia gastronómica única donde combinamos ingredientes frescos, recetas tradicionales y un ambiente acogedor. Nuestro menú está diseñado para ofrecer platos deliciosos preparados con dedicación, ideales para compartir con familia y amigos.   </p>
+
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">
+                            Boletín informativo
+                        </h4>
+
+                        <p>
+                            Disfruta de una experiencia gastronómica única donde combinamos ingredientes frescos, recetas tradicionales y un ambiente acogedor.
+                        </p>
+
                     </div>
+
                 </div>
+
             </div>
-            <div class="container">
-                <div class="copyright">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">El Fogón</a>, Todos los derechos reservados. 
-							
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Inicio</a>
-                                <a href="">Cookies</a>
-                                <a href="">Ayuda</a>
-                                <a href="">Preguntas frecuentes</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
-        <!-- Footer End -->
 
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
+
+    <!-- Back to Top -->
+    <a href="#"
+       class="btn btn-lg btn-primary btn-lg-square back-to-top">
+
+       <i class="bi bi-arrow-up"></i>
+
+    </a>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="lib/wow/wow.min.js"></script>
+
     <script src="lib/easing/easing.min.js"></script>
+
     <script src="lib/waypoints/waypoints.min.js"></script>
+
     <script src="lib/counterup/counterup.min.js"></script>
+
     <script src="lib/tempusdominus/js/moment.min.js"></script>
+
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-</body>
 
+</body>
 </html>
