@@ -4,422 +4,809 @@
 <head>
     <meta charset="utf-8">
     <title>El Fogón - Acerca de Nosotros</title>
-
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png">
 
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap"
-          rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-          rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-          rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
-          rel="stylesheet" />
-
-    <!-- Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+
+        /* =============================================
+           CARRUSEL HERO
+        ============================================= */
+        .about-carousel .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+            filter: brightness(0.55);
+        }
+
+        .about-carousel .carousel-caption {
+            bottom: 50%;
+            transform: translateY(50%);
+        }
+
+        .about-carousel .carousel-caption h2 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.8rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        }
+
+        .about-carousel .carousel-caption p {
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+        .about-carousel .carousel-control-prev,
+        .about-carousel .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background: var(--primary, #c0392b);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+        }
+
+        /* =============================================
+           IMÁGENES CON ZOOM (sección about)
+        ============================================= */
+        .about-img-zoom {
+            overflow: hidden;
+            border-radius: 14px;
+            cursor: pointer;
+        }
+
+        .about-img-zoom img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: block;
+        }
+
+        .about-img-zoom:hover img {
+            transform: scale(1.1);
+        }
+
+        /* =============================================
+           SECCIÓN: HISTORIA (línea de tiempo)
+        ============================================= */
+        .historia-section {
+            background: #f8f4f0;
+            padding: 80px 0;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 0;
+            list-style: none;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--primary, #c0392b);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: calc(50% + 40px);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item.right {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: calc(50% + 40px);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            transform: translateX(-50%);
+            width: 18px;
+            height: 18px;
+            background: var(--primary, #c0392b);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary, #c0392b);
+            z-index: 1;
+        }
+
+        .timeline-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            max-width: 420px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .timeline-year {
+            display: inline-block;
+            background: var(--primary, #c0392b);
+            color: white;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item,
+            .timeline-item.right {
+                justify-content: flex-start;
+                padding-left: 60px;
+                padding-right: 0;
+            }
+            .timeline-dot {
+                left: 20px;
+            }
+            .timeline-card {
+                max-width: 100%;
+            }
+        }
+
+        /* =============================================
+           SECCIÓN: IMAGEN ANTIGUA
+        ============================================= */
+        .imagen-antigua-section {
+            padding: 70px 0;
+            background: #1a1a2e;
+        }
+
+        .antigua-frame {
+            position: relative;
+            display: inline-block;
+        }
+
+        .antigua-frame img {
+            border-radius: 10px;
+            filter: sepia(60%) contrast(1.1);
+            transition: filter 0.5s ease;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .antigua-frame:hover img {
+            filter: sepia(0%) contrast(1);
+        }
+
+        .antigua-frame .antigua-badge {
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            background: var(--primary, #c0392b);
+            color: white;
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 13px;
+            text-align: center;
+            line-height: 1.2;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .antigua-badge span {
+            font-size: 22px;
+        }
+
+        /* =============================================
+           GALERÍA DE IMÁGENES
+        ============================================= */
+        .galeria-about {
+            padding: 70px 0;
+            background: #fff;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .galeria-item {
+            overflow: hidden;
+            border-radius: 14px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .galeria-item.tall {
+            grid-row: span 2;
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+            min-height: 200px;
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.12);
+        }
+
+        .galeria-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(192,57,43,0);
+            transition: background 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .galeria-item:hover .galeria-overlay {
+            background: rgba(192,57,43,0.38);
+        }
+
+        .galeria-overlay i {
+            color: white;
+            font-size: 2rem;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.3s ease;
+        }
+
+        .galeria-item:hover .galeria-overlay i {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Modal Lightbox */
+        #lightboxModal .modal-content {
+            background: rgba(0,0,0,0.93);
+            border: none;
+            border-radius: 15px;
+        }
+
+        #lightboxModal img {
+            max-height: 80vh;
+            max-width: 100%;
+            border-radius: 10px;
+            object-fit: contain;
+        }
+
+        /* =============================================
+           ESTADÍSTICAS
+        ============================================= */
+        .stats-section {
+            background: linear-gradient(135deg, #c0392b, #922b21);
+            padding: 60px 0;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-box .num {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            font-family: 'Pacifico', cursive;
+            line-height: 1;
+        }
+
+        .stat-box .lbl {
+            color: rgba(255,255,255,0.85);
+            font-size: 15px;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-divider {
+            width: 1px;
+            background: rgba(255,255,255,0.2);
+            height: 60px;
+            margin: auto;
+        }
+
+        @media (max-width: 768px) {
+            .galeria-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .galeria-item.tall {
+                grid-row: span 1;
+            }
+            .about-carousel .carousel-item img {
+                height: 300px;
+            }
+            .about-carousel .carousel-caption h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
     <div class="container-fluid bg-white p-0">
 
         <!-- Spinner -->
-        <div id="spinner"
-             class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-
-            <div class="spinner-border text-primary"
-                 style="width: 3rem; height: 3rem;"
-                 role="status">
-
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
 
         <!-- Navbar -->
         <div class="container-fluid p-0">
-
             <div class="container position-relative p-0">
-
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
-
                     <a href="index.html" class="navbar-brand p-0">
-
                         <h1 class="text-primary m-0">
-                            <i class="fa fa-fire me-3"></i>
-                            El Fogón
+                            <i class="fa fa-fire me-3"></i>El Fogón
                         </h1>
-
                     </a>
-
-                    <button class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarCollapse">
-
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars"></span>
-
                     </button>
-
-                    <div class="collapse navbar-collapse"
-                         id="navbarCollapse">
-
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav ms-auto py-0 pe-4">
-
-                            <a href="index.html"
-                               class="nav-item nav-link">
-                               Inicio
-                            </a>
-
-                            <a href="about.html"
-                               class="nav-item nav-link active">
-                               Acerca de Nosotros
-                            </a>
-
-                            <a href="menu.html"
-                               class="nav-item nav-link">
-                               Menú
-                            </a>
-
-                            <a href="team.html"
-                               class="nav-item nav-link">
-                               Nuestro Equipo
-                            </a>
-
-                            <a href="contact.html"
-                               class="nav-item nav-link">
-                               Contáctanos
-                            </a>
-
+                            <a href="index.html" class="nav-item nav-link">Inicio</a>
+                            <a href="about.html" class="nav-item nav-link active">Acerca de Nosotros</a>
+                            <a href="menu.html" class="nav-item nav-link">Menú</a>
+                            <a href="team.html" class="nav-item nav-link">Nuestro Equipo</a>
+                            <a href="contact.html" class="nav-item nav-link">Contáctanos</a>
                         </div>
-
                     </div>
-
                 </nav>
-
             </div>
-
         </div>
 
-        <!-- Hero -->
-        <div class="container-fluid py-5 bg-dark hero-header mb-5">
 
-            <div class="container text-center my-5 pt-5 pb-4">
-
-                <h1 class="display-3 text-white mb-3 animated slideInDown">
-                    Acerca de Nosotros
-                </h1>
-
+        <!-- =============================================
+             CARRUSEL HERO (slider de imágenes)
+        ============================================= -->
+        <div id="aboutCarousel" class="carousel slide about-carousel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/fachada.jpg" class="d-block w-100" alt="Fachada El Fogón">
+                    <div class="carousel-caption">
+                        <h2>Bienvenidos a El Fogón</h2>
+                        <p>Una década de sabores, tradición y calidez en Soyapango</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/imagen1.jpg" class="d-block w-100" alt="Ambiente del restaurante">
+                    <div class="carousel-caption">
+                        <h2>Nuestro Ambiente</h2>
+                        <p>Un espacio acogedor diseñado para compartir momentos únicos</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/chef-cocinando.jpg" class="d-block w-100" alt="Nuestros chefs">
+                    <div class="carousel-caption">
+                        <h2>Nuestra Cocina</h2>
+                        <p>Ingredientes frescos y chefs apasionados en cada platillo</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/clientes-comiendo.jpg" class="d-block w-100" alt="Clientes felices">
+                    <div class="carousel-caption">
+                        <h2>Nuestros Clientes</h2>
+                        <p>Tu satisfacción es nuestra mayor recompensa</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/imagen2.jpg" class="d-block w-100" alt="Platillos especiales">
+                    <div class="carousel-caption">
+                        <h2>Platillos Especiales</h2>
+                        <p>Recetas únicas que combinan tradición y creatividad</p>
+                    </div>
+                </div>
             </div>
-
+            <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+            <div class="carousel-indicators" style="margin-bottom:15px;">
+                <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="4"></button>
+            </div>
         </div>
 
-        <!-- Acerca de nosotros -->
+
+        <!-- =============================================
+             SECCIÓN PRINCIPAL: ACERCA DE
+        ============================================= -->
         <div class="container-fluid py-5">
-
             <div class="container">
+                <div class="row g-5 align-items-start">
 
-                <div class="row align-items-start">
-
-                    <!-- IMÁGENES -->
+                    <!-- IMÁGENES CON ZOOM -->
                     <div class="col-lg-6">
-
-                        <!-- Imagen principal -->
-                        <div class="mb-2">
-
-                            <img class="img-fluid rounded w-100 wow zoomIn"
-                                 data-wow-delay="0.1s"
-                                 src="img/fachada.jpg"
-                                 alt="Fachada del restaurante El Fogón"
-                                 style="height: 500px; object-fit: cover;">
-
-                        </div>
-
-                        <!-- Imágenes inferiores -->
-                        <div class="d-flex gap-0">
-
-                            <!-- Clientes -->
-                            <div style="width:50%;">
-
-                                <img class="img-fluid rounded-start wow zoomIn"
-                                     data-wow-delay="0.3s"
-                                     src="img/clientes-comiendo.jpg"
-                                     alt="Clientes disfrutando la comida"
-                                     style="width:100%; height:260px; object-fit:cover; display:block;">
-
+                        <div class="mb-3">
+                            <div class="about-img-zoom wow zoomIn" data-wow-delay="0.1s" style="height:340px;" onclick="abrirLightbox('img/fachada.jpg', 'Fachada del Restaurante El Fogón')">
+                                <img src="img/fachada.jpg" alt="Fachada del restaurante El Fogón">
+                                <div class="galeria-overlay"><i class="fa fa-search-plus"></i></div>
                             </div>
-
-                            <!-- Chef -->
-                            <div style="width:50%;">
-
-                                <img class="img-fluid rounded-end wow zoomIn"
-                                     data-wow-delay="0.5s"
-                                     src="img/chef-cocinando.jpg"
-                                     alt="Chef preparando comida"
-                                     style="width:100%; height:260px; object-fit:cover; display:block;">
-
-                            </div>
-
                         </div>
-
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="about-img-zoom wow zoomIn" data-wow-delay="0.3s" style="height:220px;" onclick="abrirLightbox('img/clientes-comiendo.jpg', 'Clientes disfrutando la comida')">
+                                    <img src="img/clientes-comiendo.jpg" alt="Clientes disfrutando la comida">
+                                    <div class="galeria-overlay"><i class="fa fa-search-plus"></i></div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="about-img-zoom wow zoomIn" data-wow-delay="0.5s" style="height:220px;" onclick="abrirLightbox('img/chef-cocinando.jpg', 'Chef preparando comida')">
+                                    <img src="img/chef-cocinando.jpg" alt="Chef preparando comida">
+                                    <div class="galeria-overlay"><i class="fa fa-search-plus"></i></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- TEXTO -->
                     <div class="col-lg-6">
-
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">
-
-                            <i class="fa fa-fire me-3"></i>
-                            El Fogón
-
+                            <i class="fa fa-fire me-3"></i>El Fogón
                         </h5>
+                        <h1 class="mb-4">Una década de tradición y sabor en Soyapango</h1>
+                        <p class="mb-4">Hace diez años, en Soyapango, nació El Fogón como un proyecto local con el objetivo de ofrecer comida de calidad en un ambiente cercano y acogedor.</p>
+                        <p class="mb-4">Con el paso del tiempo, se ha convertido en un referente gastronómico, donde la calidez del servicio se combina con una cocina bien elaborada.</p>
+                        <p class="mb-4">Nuestro crecimiento ha sido posible gracias a un equipo de chefs comprometidos, que combinan técnicas modernas con recetas tradicionales para crear experiencias únicas.</p>
+                        <p class="mb-4">Hoy seguimos trabajando con la misma pasión del primer día, brindando a nuestros clientes una experiencia gastronómica única en el corazón de Soyapango.</p>
 
-                        <h1 class="mb-4">
-                            Una década de tradición y sabor en Soyapango
-                        </h1>
-
-                        <p class="mb-4">
-                            Hace diez años, en Soyapango, nació El Fogón como un proyecto local con el objetivo de ofrecer comida de calidad en un ambiente cercano y acogedor.
-                        </p>
-
-                        <p class="mb-4">
-                            Con el paso del tiempo, se ha convertido en un referente gastronómico, donde la calidez del servicio se combina con una cocina bien elaborada.
-                        </p>
-
-                        <p class="mb-4">
-                            Nuestro crecimiento ha sido posible gracias a un equipo de chefs comprometidos, que combinan técnicas modernas con recetas tradicionales para crear experiencias únicas.
-                        </p>
-
-                        <p class="mb-4">
-                            Hoy seguimos trabajando con la misma pasión del primer día, brindando a nuestros clientes una experiencia gastronómica única en el corazón de Soyapango.
-                        </p>
-
-                        <!-- DATOS -->
                         <div class="row g-4 mb-4">
-
-                            <!-- 10 años -->
                             <div class="col-sm-6">
-
                                 <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-
-                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0"
-                                        data-toggle="counter-up">
-
-                                        10
-
-                                    </h1>
-
+                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">10</h1>
                                     <div class="ps-4">
-
-                                        <p class="mb-0">
-                                            Años de
-                                        </p>
-
-                                        <h6 class="text-uppercase mb-0">
-                                            Experiencia
-                                        </h6>
-
+                                        <p class="mb-0">Años de</p>
+                                        <h6 class="text-uppercase mb-0">Experiencia</h6>
                                     </div>
-
                                 </div>
-
                             </div>
-
-                            <!-- 25 chefs -->
                             <div class="col-sm-6">
-
                                 <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-
-                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0"
-                                        data-toggle="counter-up">
-
-                                        25
-
-                                    </h1>
-
+                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">25</h1>
                                     <div class="ps-4">
-
-                                        <p class="mb-0">
-                                            Chefs
-                                        </p>
-
-                                        <h6 class="text-uppercase mb-0">
-                                            Profesionales
-                                        </h6>
-
+                                        <p class="mb-0">Chefs</p>
+                                        <h6 class="text-uppercase mb-0">Profesionales</h6>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
 
-                        <!-- Botón -->
-                        <a class="btn btn-primary py-3 px-5 mt-2"
-                           href="">
-
-                            Conocer más
-
+                        <a class="btn btn-primary py-3 px-5 mt-2" href="menu.html">
+                            <i class="fa fa-utensils me-2"></i> Ver nuestro Menú
                         </a>
-
                     </div>
+                </div>
+            </div>
+        </div>
 
+
+        <!-- =============================================
+             ESTADÍSTICAS
+        ============================================= -->
+        <section class="stats-section wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="row g-0 text-center">
+                    <div class="col-6 col-md-3">
+                        <div class="stat-box">
+                            <div class="num">10+</div>
+                            <div class="lbl">Años de experiencia</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-box">
+                            <div class="num">25</div>
+                            <div class="lbl">Chefs profesionales</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-box">
+                            <div class="num">50+</div>
+                            <div class="lbl">Platillos en menú</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-box">
+                            <div class="num">5k+</div>
+                            <div class="lbl">Clientes satisfechos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =============================================
+             HISTORIA (línea de tiempo)
+        ============================================= -->
+        <section class="historia-section">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="margin-bottom:60px;">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Nuestra Historia</h5>
+                    <h1 style="font-family:'Pacifico',cursive;">El camino de El Fogón</h1>
                 </div>
 
-            </div>
+                <ul class="timeline">
+                    <!-- 2015 -->
+                    <li class="timeline-item wow fadeInLeft" data-wow-delay="0.1s">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-year">2015</span>
+                            <h5>Los inicios</h5>
+                            <p class="text-muted mb-0">El Fogón abrió sus puertas como un pequeño comedor familiar en Soyapango, con apenas 5 mesas y el sueño de ofrecer comida casera de calidad al vecindario.</p>
+                        </div>
+                    </li>
 
+                    <!-- 2017 -->
+                    <li class="timeline-item right wow fadeInRight" data-wow-delay="0.2s">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-year">2017</span>
+                            <h5>Primera expansión</h5>
+                            <p class="text-muted mb-0">Gracias a la fidelidad de nuestros clientes, ampliamos el local y contratamos a nuestros primeros chefs profesionales, dando un salto en la calidad de nuestros platillos.</p>
+                        </div>
+                    </li>
+
+                    <!-- 2019 -->
+                    <li class="timeline-item wow fadeInLeft" data-wow-delay="0.3s">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-year">2019</span>
+                            <h5>Menú Signature</h5>
+                            <p class="text-muted mb-0">Lanzamos nuestra línea de platillos Signature, combinando recetas tradicionales salvadoreñas con técnicas de cocina internacional. Nuestros Medallones al Vino Tinto se convirtieron en el favorito de la casa.</p>
+                        </div>
+                    </li>
+
+                    <!-- 2021 -->
+                    <li class="timeline-item right wow fadeInRight" data-wow-delay="0.4s">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-year">2021</span>
+                            <h5>Superando desafíos</h5>
+                            <p class="text-muted mb-0">Adaptamos nuestro servicio para ofrecer pedidos a domicilio y menús especiales, manteniendo viva la llama de El Fogón y apoyando a nuestra comunidad en tiempos difíciles.</p>
+                        </div>
+                    </li>
+
+                    <!-- 2025 -->
+                    <li class="timeline-item wow fadeInLeft" data-wow-delay="0.5s">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-year">2025</span>
+                            <h5>Una década de sabor</h5>
+                            <p class="text-muted mb-0">Celebramos 10 años con una renovación completa del local, un equipo de 25 chefs y una comunidad de más de 5,000 clientes fieles que nos visitan cada mes.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- =============================================
+             IMAGEN ANTIGUA (entonces vs ahora)
+        ============================================= -->
+        <section class="imagen-antigua-section">
+            <div class="container">
+                <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Nuestros Orígenes</h5>
+                    <h1 class="text-white" style="font-family:'Pacifico',cursive;">Entonces y Ahora</h1>
+                    <p class="text-white-50">Pasa el cursor sobre la imagen para ver el cambio</p>
+                </div>
+
+                <div class="row g-5 align-items-center">
+                    <!-- Imagen antigua -->
+                    <div class="col-lg-6 text-center wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="antigua-frame d-inline-block">
+                            <img src="img/imagen3.png" alt="El Fogón en sus inicios" class="img-fluid" style="max-height:380px; width:100%; object-fit:cover;">
+                            <div class="antigua-badge">
+                                <span>2015</span>
+                                <small>Así éramos</small>
+                            </div>
+                        </div>
+                        <p class="text-white-50 mt-4 fst-italic">"El primer día que abrimos, no sabíamos lo grande que esto se volvería."</p>
+                    </div>
+
+                    <!-- Imagen actual -->
+                    <div class="col-lg-6 text-center wow fadeInRight" data-wow-delay="0.3s">
+                        <div class="antigua-frame d-inline-block">
+                            <img src="img/fachada.jpg" alt="El Fogón hoy" class="img-fluid" style="max-height:380px; width:100%; object-fit:cover; filter:none;">
+                            <div class="antigua-badge" style="background: #27ae60;">
+                                <span>2025</span>
+                                <small>Hoy somos</small>
+                            </div>
+                        </div>
+                        <p class="text-white-50 mt-4 fst-italic">"Una década después, seguimos cocinando con el mismo amor de siempre."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =============================================
+             GALERÍA DE IMÁGENES (con lightbox)
+        ============================================= -->
+        <section class="galeria-about">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="margin-bottom:50px;">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Galería</h5>
+                    <h1 style="font-family:'Pacifico',cursive;">Momentos en El Fogón</h1>
+                    <p class="text-muted">Haz clic en cualquier imagen para verla en detalle</p>
+                </div>
+
+                <div class="galeria-grid wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="galeria-item tall" onclick="abrirLightbox('img/imagen1.jpg', 'Ambiente de El Fogón')">
+                        <img src="img/imagen1.jpg" alt="Ambiente">
+                        <div class="galeria-overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                    <div class="galeria-item" onclick="abrirLightbox('img/imagen2.jpg', 'Nuestros platillos')">
+                        <img src="img/imagen2.jpg" alt="Platillos">
+                        <div class="galeria-overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                    <div class="galeria-item" onclick="abrirLightbox('img/chef-cocinando.jpg', 'Chef preparando comida')">
+                        <img src="img/chef-cocinando.jpg" alt="Chef">
+                        <div class="galeria-overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                    <div class="galeria-item" onclick="abrirLightbox('img/clientes-comiendo.jpg', 'Clientes disfrutando')">
+                        <img src="img/clientes-comiendo.jpg" alt="Clientes">
+                        <div class="galeria-overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                    <div class="galeria-item" onclick="abrirLightbox('img/imagen3.png', 'El Fogón en sus inicios')">
+                        <img src="img/imagen3.png" alt="Inicios">
+                        <div class="galeria-overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                    <div class="galeria-item tall" onclick="abrirLightbox('img/imagen4.png', 'Nuestro equipo')">
+                        <img src="img/imagen4.png" alt="Equipo">
+                        <div class="galeria-overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                    <div class="galeria-item" onclick="abrirLightbox('img/fachada.jpg', 'Fachada actual')">
+                        <img src="img/fachada.jpg" alt="Fachada">
+                        <div class="galeria-overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                    <div class="galeria-item" onclick="abrirLightbox('img/almuerzo1.jpg', 'Medallones de Res')">
+                        <img src="img/almuerzo1.jpg" alt="Platillo especial">
+                        <div class="galeria-overlay"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Modal Lightbox -->
+        <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content" style="background:rgba(0,0,0,0.93); border:none; border-radius:15px; position:relative;">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" style="position:absolute; top:10px; right:10px; z-index:10;"></button>
+                    <div class="modal-body p-3 text-center">
+                        <img id="lightboxImg" src="" alt="" style="max-height:80vh; max-width:100%; border-radius:10px; object-fit:contain;">
+                        <p id="lightboxCaption" class="text-white mt-3 mb-0" style="font-size:1.1rem; font-family:'Pacifico',cursive;"></p>
+                    </div>
+                </div>
+            </div>
         </div>
+
 
         <!-- Footer -->
-        <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
-             data-wow-delay="0.1s">
-
+        <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
-
                 <div class="row g-5">
-
-                    <!-- Compañía -->
                     <div class="col-lg-3 col-md-6">
-
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">
-                            Compañía
-                        </h4>
-
-                        <a class="btn btn-link" href="">
-                            Contáctanos
-                        </a>
-
-                        <a class="btn btn-link" href="">
-                            Reserva con nosotros
-                        </a>
-
-                        <a class="btn btn-link" href="">
-                            Políticas de privacidad
-                        </a>
-
-                        <a class="btn btn-link" href="">
-                            Términos y condiciones
-                        </a>
-
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Compañía</h4>
+                        <a class="btn btn-link" href="">Contáctanos</a>
+                        <a class="btn btn-link" href="">Reserva con nosotros</a>
+                        <a class="btn btn-link" href="">Políticas de privacidad</a>
+                        <a class="btn btn-link" href="">Términos y condiciones</a>
                     </div>
-
-                    <!-- Dirección -->
                     <div class="col-lg-3 col-md-6">
-
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">
-                            Dirección
-                        </h4>
-
-                        <p class="mb-2">
-                            <i class="fa fa-map-marker-alt me-3"></i>
-                            Calle a Plan del Pino, Km. 1½,
-                            Ciudadela Don Bosco,
-                            Soyapango, San Salvador
-                        </p>
-
-                        <p class="mb-2">
-                            <i class="fa fa-phone-alt me-3"></i>
-                            +503 2251 8241
-                        </p>
-
-                        <p class="mb-2">
-                            <i class="fa fa-envelope me-3"></i>
-                            grupo_HTML_LME2026@alumno.edu.sv
-                        </p>
-
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Dirección</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Calle a Plan del Pino, Km. 1½, Ciudadela Don Bosco, Soyapango, San Salvador</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+503 2251 8241</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>grupo_HTML_LME2026@alumno.edu.sv</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
                     </div>
-
-                    <!-- Horarios -->
                     <div class="col-lg-3 col-md-6">
-
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">
-                            Horarios
-                        </h4>
-
-                        <h5 class="text-light fw-normal">
-                            Lunes - Sábado
-                        </h5>
-
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Horarios</h4>
+                        <h5 class="text-light fw-normal">Lunes - Sábado</h5>
                         <p>09AM - 09PM</p>
-
-                        <h5 class="text-light fw-normal">
-                            Domingo
-                        </h5>
-
+                        <h5 class="text-light fw-normal">Domingo</h5>
                         <p>10AM - 08PM</p>
-
                     </div>
-
-                    <!-- Información -->
                     <div class="col-lg-3 col-md-6">
-
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">
-                            Boletín informativo
-                        </h4>
-
-                        <p>
-                            Disfruta de una experiencia gastronómica única donde combinamos ingredientes frescos, recetas tradicionales y un ambiente acogedor.
-                        </p>
-
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Boletín informativo</h4>
+                        <p>Disfruta de una experiencia gastronómica única donde combinamos ingredientes frescos, recetas tradicionales y un ambiente acogedor.</p>
                     </div>
-
                 </div>
-
             </div>
-
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">El Fogón</a>, Todos los derechos reservados.
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Inicio</a>
+                                <a href="">Cookies</a>
+                                <a href="">Ayuda</a>
+                                <a href="">Preguntas frecuentes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
     </div>
 
-    <!-- Back to Top -->
-    <a href="#"
-       class="btn btn-lg btn-primary btn-lg-square back-to-top">
-
-       <i class="bi bi-arrow-up"></i>
-
-    </a>
-
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="lib/wow/wow.min.js"></script>
-
     <script src="lib/easing/easing.min.js"></script>
-
     <script src="lib/waypoints/waypoints.min.js"></script>
-
     <script src="lib/counterup/counterup.min.js"></script>
-
     <script src="lib/tempusdominus/js/moment.min.js"></script>
-
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        // Lightbox
+        function abrirLightbox(src, caption) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightboxCaption').textContent = caption;
+            var modal = new bootstrap.Modal(document.getElementById('lightboxModal'));
+            modal.show();
+        }
+    </script>
 
 </body>
 </html>
