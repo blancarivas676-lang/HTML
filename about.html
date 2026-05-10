@@ -42,6 +42,7 @@
         .about-carousel .carousel-caption h2 {
             font-family: 'Pacifico', cursive;
             font-size: 2.8rem;
+            color: #ffb347;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
         }
 
@@ -458,31 +459,69 @@
             <div class="container">
                 <div class="row g-5 align-items-start">
 
-                    <!-- IMÁGENES CON ZOOM -->
-                    <div class="col-lg-6">
-                        <div class="mb-3">
-                            <div class="about-img-zoom wow zoomIn" data-wow-delay="0.1s" style="height:340px;" onclick="abrirLightbox('img/fachada.jpg', 'Fachada del Restaurante El Fogón')">
-                                <img src="img/fachada.jpg" alt="Fachada del restaurante El Fogón">
-                                <div class="galeria-overlay"><i class="fa fa-search-plus"></i></div>
-                            </div>
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <div class="about-img-zoom wow zoomIn" data-wow-delay="0.3s" style="height:220px;" onclick="abrirLightbox('img/clientes-comiendo.jpg', 'Clientes disfrutando la comida')">
-                                    <img src="img/clientes-comiendo.jpg" alt="Clientes disfrutando la comida">
-                                    <div class="galeria-overlay"><i class="fa fa-search-plus"></i></div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="about-img-zoom wow zoomIn" data-wow-delay="0.5s" style="height:220px;" onclick="abrirLightbox('img/chef-cocinando.jpg', 'Chef preparando comida')">
-                                    <img src="img/chef-cocinando.jpg" alt="Chef preparando comida">
-                                    <div class="galeria-overlay"><i class="fa fa-search-plus"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!-- IMÁGENES CON ZOOM -->
+<div class="col-lg-6">
 
-                    <!-- TEXTO -->
+    <!-- Imagen grande -->
+    <div class="mb-3">
+        <div class="about-img-zoom wow zoomIn"
+             data-wow-delay="0.1s"
+             style="height:340px; position:relative; z-index:1;"
+             onclick="abrirLightbox('img/fachada.jpg', 'Fachada del Restaurante El Fogón')">
+
+            <img src="img/fachada.jpg"
+                 alt="Fachada del restaurante El Fogón"
+                 style="pointer-events:none;">
+
+            <div class="galeria-overlay" style="pointer-events:none;">
+                <i class="fa fa-search-plus"></i>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Imágenes pequeñas -->
+    <div class="row gx-2">
+
+        <!-- Clientes -->
+        <div class="col-6">
+            <div class="about-img-zoom wow zoomIn"
+                 data-wow-delay="0.3s"
+                 style="height:220px; position:relative; z-index:1;"
+                 onclick="abrirLightbox('img/clientes-comiendo.jpg', 'Clientes disfrutando la comida')">
+
+                <img src="img/clientes-comiendo.jpg"
+                     alt="Clientes disfrutando la comida"
+                     style="pointer-events:none;">
+
+                <div class="galeria-overlay" style="pointer-events:none;">
+                    <i class="fa fa-search-plus"></i>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Chef -->
+        <div class="col-6">
+            <div class="about-img-zoom wow zoomIn"
+                 data-wow-delay="0.5s"
+                 style="height:220px; position:relative; z-index:1;"
+                 onclick="abrirLightbox('img/chef-cocinando.jpg', 'Chef preparando comida')">
+
+                <img src="img/chef-cocinando.jpg"
+                     alt="Chef preparando comida"
+                     style="pointer-events:none;">
+
+                <div class="galeria-overlay" style="pointer-events:none;">
+                    <i class="fa fa-search-plus"></i>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>                    <!-- TEXTO -->
                     <div class="col-lg-6">
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">
                             <i class="fa fa-fire me-3"></i>El Fogón
