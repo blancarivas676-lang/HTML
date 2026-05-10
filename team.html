@@ -3,204 +3,52 @@
 
 <head>
     <meta charset="utf-8">
-    <title>El Fogón - Nuestro Equipo</title>
+    <title>Restaurante - Carta del Día</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png">
 
+    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
 
+    <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
+    <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
+    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-
-    <style>
-        /* =============================================
-           TARJETAS DEL EQUIPO MEJORADAS
-        ============================================= */
-        .team-item {
-            box-shadow: 0 0 45px rgba(0,0,0,0.08);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: white;
-            padding-bottom: 25px;
-        }
-
-        .team-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-        }
-
-        /* Foto circular con zoom */
-        .team-img-wrap {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 30px auto 15px auto;
-            border: 4px solid #f0f0f0;
-            transition: border-color 0.3s ease;
-        }
-
-        .team-item:hover .team-img-wrap {
-            border-color: var(--primary, #c0392b);
-        }
-
-        .team-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .team-item:hover .team-img-wrap img {
-            transform: scale(1.12);
-        }
-
-        /* Descripción del chef */
-        .team-desc {
-            font-size: 13px;
-            color: #777;
-            padding: 0 20px;
-            margin-top: 8px;
-            line-height: 1.5;
-        }
-
-        /* Botones de redes sociales */
-        .team-item .btn-square {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            transition: transform 0.2s ease, background 0.2s ease;
-        }
-
-        .team-item .btn-square:hover {
-            transform: scale(1.2);
-        }
-
-        /* Separador decorativo bajo el cargo */
-        .team-divider {
-            width: 35px;
-            height: 2px;
-            background: var(--primary, #c0392b);
-            margin: 8px auto 10px auto;
-            border-radius: 2px;
-        }
-
-        /* =============================================
-           SECCIÓN DE VALORES
-        ============================================= */
-        .valores-section {
-            background: #f8f4f0;
-            padding: 80px 0;
-        }
-
-        .valor-card {
-            background: white;
-            border-radius: 18px;
-            padding: 40px 25px;
-            text-align: center;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.07);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-        }
-
-        .valor-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 18px 45px rgba(0,0,0,0.13);
-        }
-
-        .valor-icon {
-            width: 75px;
-            height: 75px;
-            background: linear-gradient(135deg, #c0392b, #e74c3c);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px auto;
-            font-size: 1.8rem;
-            color: white;
-            transition: transform 0.3s ease;
-        }
-
-        .valor-card:hover .valor-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .valor-card h5 {
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #1a1a2e;
-        }
-
-        .valor-card p {
-            color: #777;
-            font-size: 14px;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        /* =============================================
-           BANNER ÚNETE AL EQUIPO
-        ============================================= */
-        .join-banner {
-            background: linear-gradient(135deg, #c0392b, #922b21);
-            padding: 70px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .join-banner::before {
-            content: '';
-            position: absolute;
-            right: -80px;
-            top: -80px;
-            width: 300px;
-            height: 300px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 50%;
-        }
-
-        .join-banner::after {
-            content: '';
-            position: absolute;
-            left: -50px;
-            bottom: -50px;
-            width: 200px;
-            height: 200px;
-            background: rgba(255,255,255,0.04);
-            border-radius: 50%;
-        }
-    </style>
 </head>
 
 <body>
     <div class="container-fluid bg-white p-0">
-
-        <!-- Spinner -->
+        <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
+        <!-- Spinner End -->
 
-        <!-- Navbar -->
+
+        <!-- Navbar & Hero Start -->
         <div class="container-fluid p-0">
             <div class="container position-relative p-0">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 py-lg-0">
-                    <a href="index.html" class="navbar-brand p-0">
-                        <h1 class="text-primary m-0"><i class="fa fa-fire me-3"></i>El Fogón</h1>
+                    <a href="" class="navbar-brand p-0">
+                        <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Restaurante</h1>
+                        <!-- <img src="img/logo.png" alt="Logo"> -->
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars"></span>
@@ -208,208 +56,127 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav ms-auto py-0 pe-4">
                             <a href="index.html" class="nav-item nav-link">Inicio</a>
-                            <a href="about.html" class="nav-item nav-link">Acerca de Nosotros</a>
-                            <a href="menu.html" class="nav-item nav-link">Menú</a>
-                            <a href="team.html" class="nav-item nav-link active">Nuestro Equipo</a>
-                            <a href="contact.html" class="nav-item nav-link">Contáctanos</a>
+                            <a href="about.html" class="nav-item nav-link">Nosotros</a>
+                            <a href="menu.html" class="nav-item nav-link">Menu</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Paginas</a>
+                                <div class="dropdown-menu m-0">
+                                    <a href="booking.html" class="dropdown-item">Booking</a>
+                                    <a href="team.html" class="dropdown-item active">Nuestro Equipo</a>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="nav-item nav-link">Contacto</a>
                         </div>
                     </div>
                 </nav>
             </div>
 
-            <!-- Hero -->
             <div class="container-fluid py-5 bg-dark hero-header mb-5">
                 <div class="container text-center my-5 pt-5 pb-4">
-                    <div style="color:#f39c12; font-size:14px; margin-bottom:10px;">★ ★ ★</div>
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">
-                        Talento y pasión al servicio<br>de tu experiencia
-                    </h1>
-                    <div style="width:70px; height:3px; background:#f39c12; margin:0 auto;"></div>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Nuestro Equipo</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="#">Paginas</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Equipo</li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
         </div>
+        <!-- Navbar & Hero End -->
 
 
-        <!-- =============================================
-             SECCIÓN: NUESTRO EQUIPO
-        ============================================= -->
-        <div class="container-fluid py-5">
+        <!-- Team Start -->
+        <div class="container-fluid pt-5 pb-3">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Nuestro Equipo de</h5>
-                    <h1 class="mb-2" style="font-family:'Pacifico',cursive;">Chefs</h1>
-                    <p class="text-muted mb-5">Conoce a los apasionados que hacen posible cada platillo</p>
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Mienbros del equipo</h5>
+                    <h1 class="mb-5">Nuestros Chefs</h1>
                 </div>
-
                 <div class="row g-4">
-
-                    <!-- Chef 1 -->
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item text-center">
-                            <div class="team-img-wrap">
-                                <img src="img/team-1.jpg" alt="Arturo Garcia">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4">
+                                <img class="img-fluid" src="img/team-1.jpg" alt="">
                             </div>
                             <h5 class="mb-0">Arturo Garcia</h5>
-                            <small class="text-primary fw-bold text-uppercase" style="font-size:11px; letter-spacing:1px;">Maestro Chef</small>
-                            <div class="team-divider"></div>
-                            <p class="team-desc">Más de 15 años de experiencia en cocina internacional. Especialista en carnes a la parrilla y salsas artesanales.</p>
-                            <div class="d-flex justify-content-center mt-3 gap-2">
-                                <a class="btn btn-square btn-primary" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary" href=""><i class="fab fa-instagram"></i></a>
+                            <small>Maestro Chef</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Chef 2 -->
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="team-item text-center">
-                            <div class="team-img-wrap">
-                                <img src="img/team-2.jpg" alt="Elena Vides">
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4">
+                                <img class="img-fluid" src="img/team-2.jpg" alt="">
                             </div>
                             <h5 class="mb-0">Elena Vides</h5>
-                            <small class="text-primary fw-bold text-uppercase" style="font-size:11px; letter-spacing:1px;">Chef Junior</small>
-                            <div class="team-divider"></div>
-                            <p class="team-desc">Graduada con honores en artes culinarias. Su toque creativo convierte cada plato en una obra de arte.</p>
-                            <div class="d-flex justify-content-center mt-3 gap-2">
-                                <a class="btn btn-square btn-primary" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary" href=""><i class="fab fa-instagram"></i></a>
+                            <small>Chef Junior</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Chef 3 -->
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-item text-center">
-                            <div class="team-img-wrap">
-                                <img src="img/team-3.jpg" alt="Isabel Sosa">
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4">
+                                <img class="img-fluid" src="img/team-3.jpg" alt="">
                             </div>
                             <h5 class="mb-0">Isabel Sosa</h5>
-                            <small class="text-primary fw-bold text-uppercase" style="font-size:11px; letter-spacing:1px;">Jefa de Cocina</small>
-                            <div class="team-divider"></div>
-                            <p class="team-desc">Coordina el equipo con precisión y entusiasmo. Experta en cocina mediterránea y fusión latinoamericana.</p>
-                            <div class="d-flex justify-content-center mt-3 gap-2">
-                                <a class="btn btn-square btn-primary" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary" href=""><i class="fab fa-instagram"></i></a>
+                            <small>Jefa de Cocina</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Chef 4 -->
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="team-item text-center">
-                            <div class="team-img-wrap">
-                                <img src="img/team-4.jpg" alt="Daniel Rosales">
+                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
                             </div>
                             <h5 class="mb-0">Daniel Rosales</h5>
-                            <small class="text-primary fw-bold text-uppercase" style="font-size:11px; letter-spacing:1px;">Maestro Pastelero</small>
-                            <div class="team-divider"></div>
-                            <p class="team-desc">Artesano del dulce con formación en Francia. Sus postres son el broche de oro de cada visita a El Fogón.</p>
-                            <div class="d-flex justify-content-center mt-3 gap-2">
-                                <a class="btn btn-square btn-primary" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary" href=""><i class="fab fa-instagram"></i></a>
+                            <small>Maestro Pastelero</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
-
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- Team End -->
+        
 
-
-        <!-- =============================================
-             SECCIÓN: NUESTROS VALORES
-        ============================================= -->
-        <section class="valores-section">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="margin-bottom:50px;">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Lo que nos mueve</h5>
-                    <h1 style="font-family:'Pacifico',cursive;">Nuestros Valores</h1>
-                </div>
-
-                <div class="row g-4">
-
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="valor-card">
-                            <div class="valor-icon">
-                                <i class="fa fa-heart"></i>
-                            </div>
-                            <h5>Pasión</h5>
-                            <p>Cocinamos con amor en cada platillo. La pasión es el ingrediente secreto que hace única cada experiencia en El Fogón.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="valor-card">
-                            <div class="valor-icon">
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <h5>Calidad</h5>
-                            <p>Usamos únicamente ingredientes frescos y de primera. La calidad no es opcional, es nuestra promesa con cada cliente.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="valor-card">
-                            <div class="valor-icon">
-                                <i class="fa fa-users"></i>
-                            </div>
-                            <h5>Trabajo en Equipo</h5>
-                            <p>Cada plato es el resultado de un equipo unido. Colaboramos, aprendemos juntos y celebramos cada logro como familia.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="valor-card">
-                            <div class="valor-icon">
-                                <i class="fa fa-leaf"></i>
-                            </div>
-                            <h5>Tradición</h5>
-                            <p>Honramos las recetas de siempre. Cada sabor cuenta una historia y preservamos esa herencia en nuestra cocina.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-        <!-- =============================================
-             BANNER: ÚNETE AL EQUIPO
-        ============================================= -->
-        <section class="join-banner wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container text-center" style="position:relative; z-index:1;">
-                <h5 class="ff-secondary text-white fw-normal mb-2" style="font-size:1.1rem;">¿Tienes talento?</h5>
-                <h2 class="text-white mb-3" style="font-family:'Pacifico',cursive;">Únete a Nuestro Equipo</h2>
-                <p class="text-white mb-4" style="opacity:0.9; max-width:550px; margin:0 auto 25px auto;">
-                    Buscamos personas apasionadas por la gastronomía. Si tienes habilidades culinarias y ganas de crecer, queremos conocerte.
-                </p>
-                <a href="contact.html" class="btn btn-light py-3 px-5" style="border-radius:30px; font-weight:700; color:#c0392b;">
-                    <i class="fa fa-paper-plane me-2"></i> Envíanos tu CV
-                </a>
-            </div>
-        </section>
-
-
-        <!-- Footer -->
+        <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Compañía</h4>
-                        <a class="btn btn-link" href="">Contáctanos</a>
-                        <a class="btn btn-link" href="">Reserva con nosotros</a>
-                        <a class="btn btn-link" href="">Políticas de privacidad</a>
-                        <a class="btn btn-link" href="">Términos y condiciones</a>
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Reservation</a>
+                        <a class="btn btn-link" href="">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Dirección</h4>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Calle a Plan del Pino, Km. 1½, Ciudadela Don Bosco, Soyapango, San Salvador</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+503 2251 8241</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>grupo_HTLM_LME2026@alumno.edu.sv</p>
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -418,15 +185,19 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Horarios</h4>
-                        <h5 class="text-light fw-normal">Lunes - Sábado</h5>
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Opening</h4>
+                        <h5 class="text-light fw-normal">Monday - Saturday</h5>
                         <p>09AM - 09PM</p>
-                        <h5 class="text-light fw-normal">Domingo</h5>
+                        <h5 class="text-light fw-normal">Sunday</h5>
                         <p>10AM - 08PM</p>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Boletín informativo</h4>
-                        <p>Disfruta de una experiencia gastronómica única donde combinamos ingredientes frescos, recetas tradicionales y un ambiente acogedor.</p>
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
+                        <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -434,24 +205,29 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">El Fogón</a>, Todos los derechos reservados.
+                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved. 
+							
+							<!--/*** The author’s attribution link below must remain intact on your website. ***/-->
+                            <!--/*** If you wish to remove this credit link, please purchase the Pro Version from https://htmlcodex.com . ***/-->
+                            Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
-                                <a href="">Inicio</a>
+                                <a href="">Home</a>
                                 <a href="">Cookies</a>
-                                <a href="">Ayuda</a>
-                                <a href="">Preguntas frecuentes</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Footer End -->
+
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
     </div>
 
     <!-- JavaScript Libraries -->
@@ -464,7 +240,9 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="js/main.js"></script>
 
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>
